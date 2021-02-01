@@ -1,0 +1,27 @@
+{
+  "name": "React_Flappy_Bird",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodgguy/React_Flappy_Bird.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goodgguy/React_Flappy_Bird/issues"
+  },
+  "homepage": "https://github.com/goodgguy/React_Flappy_Bird#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 const App = ({store}) => {
     return (
         <div>
-            <Provider> store={store}
+            <Provider store={store}>
             <Game/>
             </Provider>
         </div>

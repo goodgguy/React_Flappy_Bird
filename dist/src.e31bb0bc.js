@@ -29772,166 +29772,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"images/bird.png":[function(require,module,exports) {
-module.exports = "/bird.5fd28279.png";
-},{}],"components/Bird.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _bird = _interopRequireDefault(require("../images/bird.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Bird = function Bird() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: 250,
-      left: 120,
-      width: 38,
-      height: 26,
-      background: "url(".concat(_bird.default, ")")
-    }
-  });
-};
-
-var _default = Bird;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","../images/bird.png":"images/bird.png"}],"images/pipe-top.png":[function(require,module,exports) {
-module.exports = "/pipe-top.642f96a4.png";
-},{}],"images/pipe-bottom.png":[function(require,module,exports) {
-module.exports = "/pipe-bottom.b6b9fa3e.png";
-},{}],"components/Pipe.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _pipeTop = _interopRequireDefault(require("../images/pipe-top.png"));
-
-var _pipeBottom = _interopRequireDefault(require("../images/pipe-bottom.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Pipe = function Pipe() {
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: 0,
-      left: 150,
-      width: 52,
-      height: 200,
-      background: "url(".concat(_pipeTop.default, ")"),
-      backgroundPosition: 'bottom'
-    }
-  }), /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: 300,
-      left: 150,
-      width: 52,
-      height: 200,
-      background: "url(".concat(_pipeBottom.default, ")")
-    }
-  }));
-};
-
-var _default = Pipe;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","../images/pipe-top.png":"images/pipe-top.png","../images/pipe-bottom.png":"images/pipe-bottom.png"}],"images/fg.png":[function(require,module,exports) {
-module.exports = "/fg.1e77431d.png";
-},{}],"components/Foreground.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _fg = _interopRequireDefault(require("../images/fg.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Foreground = function Foreground() {
-  return /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      position: 'absolute',
-      bottom: 0,
-      width: 306,
-      height: 108,
-      background: "url(".concat(_fg.default, ")")
-    }
-  });
-};
-
-var _default = Foreground;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","../images/fg.png":"images/fg.png"}],"images/bg.png":[function(require,module,exports) {
-module.exports = "/bg.e79a717b.png";
-},{}],"components/Game.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _Bird = _interopRequireDefault(require("./Bird"));
-
-var _Pipe = _interopRequireDefault(require("./Pipe"));
-
-var _Foreground = _interopRequireDefault(require("./Foreground"));
-
-var _bg = _interopRequireDefault(require("../images/bg.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-var Game = function Game() {
-  (0, _react.useEffect)(function () {
-    var handleKeyPress = function handleKeyPress(e) {
-      if (e.keyCode === 32) {
-        fly();
-      }
-    };
-
-    document.addEventListener('keypress', handleKeyPress);
-  }, []);
-  return /*#__PURE__*/_react.default.createElement("div", {
-    style: {
-      position: 'relative',
-      width: 288,
-      height: 512,
-      backgroundColor: 'pink',
-      background: "url(".concat(_bg.default, ")")
-    }
-  }, /*#__PURE__*/_react.default.createElement(_Bird.default, null), /*#__PURE__*/_react.default.createElement(_Pipe.default, null), /*#__PURE__*/_react.default.createElement(_Foreground.default, null));
-};
-
-var fly = function fly() {
-  console.log('tuanquen');
-};
-
-var _default = Game;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Bird":"components/Bird.js","./Pipe":"components/Pipe.js","./Foreground":"components/Foreground.js","../images/bg.png":"images/bg.png"}],"../node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../node_modules/react-is/cjs/react-is.development.js":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -33418,7 +33259,185 @@ var _shallowEqual = _interopRequireDefault(require("./utils/shallowEqual"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _batch.setBatch)(_reactBatchedUpdates.unstable_batchedUpdates);
-},{"./components/Provider":"../node_modules/react-redux/es/components/Provider.js","./components/connectAdvanced":"../node_modules/react-redux/es/components/connectAdvanced.js","./components/Context":"../node_modules/react-redux/es/components/Context.js","./connect/connect":"../node_modules/react-redux/es/connect/connect.js","./hooks/useDispatch":"../node_modules/react-redux/es/hooks/useDispatch.js","./hooks/useSelector":"../node_modules/react-redux/es/hooks/useSelector.js","./hooks/useStore":"../node_modules/react-redux/es/hooks/useStore.js","./utils/batch":"../node_modules/react-redux/es/utils/batch.js","./utils/reactBatchedUpdates":"../node_modules/react-redux/es/utils/reactBatchedUpdates.js","./utils/shallowEqual":"../node_modules/react-redux/es/utils/shallowEqual.js"}],"components/App.js":[function(require,module,exports) {
+},{"./components/Provider":"../node_modules/react-redux/es/components/Provider.js","./components/connectAdvanced":"../node_modules/react-redux/es/components/connectAdvanced.js","./components/Context":"../node_modules/react-redux/es/components/Context.js","./connect/connect":"../node_modules/react-redux/es/connect/connect.js","./hooks/useDispatch":"../node_modules/react-redux/es/hooks/useDispatch.js","./hooks/useSelector":"../node_modules/react-redux/es/hooks/useSelector.js","./hooks/useStore":"../node_modules/react-redux/es/hooks/useStore.js","./utils/batch":"../node_modules/react-redux/es/utils/batch.js","./utils/reactBatchedUpdates":"../node_modules/react-redux/es/utils/reactBatchedUpdates.js","./utils/shallowEqual":"../node_modules/react-redux/es/utils/shallowEqual.js"}],"images/bird.png":[function(require,module,exports) {
+module.exports = "/bird.5fd28279.png";
+},{}],"components/Bird.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _bird = _interopRequireDefault(require("../images/bird.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Bird = function Bird() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 250,
+      left: 120,
+      width: 38,
+      height: 26,
+      background: "url(".concat(_bird.default, ")")
+    }
+  });
+};
+
+var _default = Bird;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../images/bird.png":"images/bird.png"}],"images/pipe-top.png":[function(require,module,exports) {
+module.exports = "/pipe-top.642f96a4.png";
+},{}],"images/pipe-bottom.png":[function(require,module,exports) {
+module.exports = "/pipe-bottom.b6b9fa3e.png";
+},{}],"components/Pipe.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _pipeTop = _interopRequireDefault(require("../images/pipe-top.png"));
+
+var _pipeBottom = _interopRequireDefault(require("../images/pipe-bottom.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Pipe = function Pipe() {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 0,
+      left: 150,
+      width: 52,
+      height: 200,
+      background: "url(".concat(_pipeTop.default, ")"),
+      backgroundPosition: 'bottom'
+    }
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 300,
+      left: 150,
+      width: 52,
+      height: 200,
+      background: "url(".concat(_pipeBottom.default, ")")
+    }
+  }));
+};
+
+var _default = Pipe;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../images/pipe-top.png":"images/pipe-top.png","../images/pipe-bottom.png":"images/pipe-bottom.png"}],"images/fg.png":[function(require,module,exports) {
+module.exports = "/fg.1e77431d.png";
+},{}],"components/Foreground.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _fg = _interopRequireDefault(require("../images/fg.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Foreground = function Foreground() {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 0,
+      width: 306,
+      height: 108,
+      background: "url(".concat(_fg.default, ")")
+    }
+  });
+};
+
+var _default = Foreground;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","../images/fg.png":"images/fg.png"}],"images/bg.png":[function(require,module,exports) {
+module.exports = "/bg.e79a717b.png";
+},{}],"components/Game.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRedux = require("react-redux");
+
+var _Bird = _interopRequireDefault(require("./Bird"));
+
+var _Pipe = _interopRequireDefault(require("./Pipe"));
+
+var _Foreground = _interopRequireDefault(require("./Foreground"));
+
+var _bg = _interopRequireDefault(require("../images/bg.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var Game = function Game(_ref) {
+  var status = _ref.status,
+      start = _ref.start;
+  (0, _react.useEffect)(function () {
+    var handleKeyPress = function handleKeyPress(e) {
+      if (e.keyCode === 32) {
+        fly();
+      }
+
+      if (status !== 'playing') {
+        start();
+      }
+    };
+
+    document.addEventListener('keypress', handleKeyPress);
+  }, []);
+  console.log(status);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      position: 'relative',
+      width: 288,
+      height: 512,
+      backgroundColor: 'pink',
+      background: "url(".concat(_bg.default, ")")
+    }
+  }, /*#__PURE__*/_react.default.createElement(_Bird.default, null), /*#__PURE__*/_react.default.createElement(_Pipe.default, null), /*#__PURE__*/_react.default.createElement(_Foreground.default, null));
+};
+
+var fly = function fly() {
+  console.log('tuanquen');
+};
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var game = _ref2.game;
+  return {
+    status: game.status
+  };
+};
+
+var mapDispatchToProps = {};
+
+var _default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Game);
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","./Bird":"components/Bird.js","./Pipe":"components/Pipe.js","./Foreground":"components/Foreground.js","../images/bg.png":"images/bg.png"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33436,7 +33455,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var App = function App(_ref) {
   var store = _ref.store;
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRedux.Provider, null, " store=", store, /*#__PURE__*/_react.default.createElement(_Game.default, null)));
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRedux.Provider, {
+    store: store
+  }, /*#__PURE__*/_react.default.createElement(_Game.default, null)));
 };
 
 var _default = App;
@@ -33477,6 +33498,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var _default = function _default() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
@@ -33484,6 +33511,11 @@ var _default = function _default() {
       type = _ref.type;
 
   switch (type) {
+    case 'START':
+      return _objectSpread(_objectSpread({}, state), {}, {
+        status: 'playing'
+      });
+
     default:
       return state;
   }
@@ -33576,7 +33608,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55410" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54578" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React,{useEffect } from 'react'
 
 import {connect} from 'react-redux'
 
@@ -8,13 +8,14 @@ import Foreground from './Foreground'
 
 import BgImage from '../images/bg.png';
 
-const Game = ({status,start})=>{
+const Game = ({status})=>{
     useEffect(() =>{
         const handleKeyPress= (e) =>{
             if(e.keyCode ===32)
             {
-                fly()
+                fly();
             }
+            
 
             if(status !== 'playing'){
                 start();
@@ -23,6 +24,7 @@ const Game = ({status,start})=>{
         document.addEventListener('keypress', handleKeyPress)
     },[])
     console.log(status);
+
     return (
         <div
         style={{
@@ -40,7 +42,13 @@ const Game = ({status,start})=>{
 }
 
 const fly= () =>{
-    console.log('tuanquen');
+    console.log('fly');
+}
+
+const start = () => {
+    return (dispatch) => {
+        dispatch({type: 'START'})
+    }
 }
 
 const mapStateToProps = ({game}) => (
